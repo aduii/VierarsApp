@@ -1,21 +1,26 @@
 # MuniApp
 
-**Índice**
-1. [ANTECEDENTES](#id1)
-2. [PROBLEMÁTICA](#id2)
+**Tabla de contenidos**
+1. [ANTECEDENTES](#antecedentes)
+2. [PROBLEMÁTICA](#problematica)
+3. [ALCANCE DE LA SOLUCIÓN](#alcance)
+4. [DESCRIPCIÓN DE LA EMPRESA](#descripcion)
 
-<div id='id1' />
+
+<div id='antecedentes' />
 ## ANTECEDENTES
 
 Uno de los problemas más significativos de las entidades representativas del estado es la forma en la cual se llevan a cabo las interacciones con sus ciudadanos: los agentes burocráticos están efectivamente desconectados de la situación del hombre a pie y actúan, en el mejor escenario, de forma cuestionable. Por otro lado, existen una amplia gama de trámites que factiblemente podrían ser automatizados, pero ante una ausencia de incentivos para realizarlo, es necesario la intervención de un ente privado.
 
-<div id='id2' />
+<div id='problematica' />
 ## PROBLEMÁTICA
 El problema identificado es la forma ineficiente que poseen las instituciones estatales de comunicarse con los ciudadanos, debido a que los medios que utilizan siguen modelos anticuados e ineficientes, incapaces de proveer una noción de los eventos o noticias más relevantes. Asimismo, Los ciudadanos no cuentan con medios adecuados a través de los cuales notificar eventos significativos sucediendo a su alrededor. A causa de esto, los responsables de velar por la ciudadanía no solucionan los problemas. Hechos como este generan malestar en los ciudadanos al punto de causar desconfianza hacia las instituciones responsables de estos inconvenientes.
 
+<div id='alcance' />
 ## ALCANCE DE LA SOLUCIÓN
 Nuestra solución que proponemos para dar solución a la problemática presentada es construir una aplicación en java con una GUI sencilla, con la finalidad de facilitar la comunicación entre los ciudadanos y la municipalidad de cierto distrito del país sobre los diferentes problemas que pueden ocurrir en la ciudad.
 
+<div id='descripcion' />
 ## DESCRIPCIÓN DE LA EMPRESA
 Somos una empresa enfocada a mejorar el proceso de interacción entre ciudadanos y entidades estatales. Entre los servicios brindados incluiremos una interfaz en la cual se crearán, recibirán y clasificará reportes de cualquier inconveniente. Además, se automatizará el servicio al ciudadano en tareas mundanas con la finalidad de brindar una mejor calidad de vida al ciudadano de a pie.
 Personas que conforman el proyecto:
