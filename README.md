@@ -1,5 +1,5 @@
 # MuniApp
-[![forthebadge](https://forthebadge.com/images/badges/built-by-developers.svg)](https://forthebadge.com)
+
 
 ## TABLA DE CONTENIDO
 1. [ANTECEDENTES](#antecedentes)
@@ -260,3 +260,5 @@ Formado por Andy Eulogio Sulluchuco, Diana Regina Navarro Ruíz y Jesús Andrés
 ## DIAGRAMA DE CLASES
 
 ![](https://imgur.com/xCnd3dL.png)
+
+[![forthebadge](https://forthebadge.com/images/badges/built-by-developers.svg)](https://forthebadge.com)
