@@ -68,6 +68,191 @@ Formado por Andy Eulogio Sulluchuco, Diana Regina Navarro Ruíz y Jesús Andrés
 ## HISTORIAS DE USUARIO
 <table>
   <tr>
+    <th colspan="2"><b>Historia de usuario</b></th>
+  </tr>
+  <tr>
+    <td><b>Número:</b> RF01</td>
+    <td><b>Usuario:</b> Autoridad</td>
+  </tr>
+  <tr>
+    <td colspan="2"><b>Nombre de historia:</b> Registrar autoridades</td>
+  </tr>
+  <tr>
+    <td><b>Prioridad en negocio:</b> </td>
+    <td><b>Riesgo en desarrollo:</b> </td>
+  </tr>
+  <tr>
+    <td colspan="2"><b>Programador responsable:</b> </td>
+  </tr>
+  <tr>
+    <td colspan="2"><b>Descripción:</b>Como representante de la institución quiero registrar a las autoridades encargadas de estar pendientes de la plataforma para que como entidad podamos actuar rápidamente.<br></td>
+  </tr>
+  <tr>
+    <td colspan="2"><b>Criterios de aceptación:</b>
+      <ul>
+        <li>Dado que el representante se encuentre en la vista Autoridades cuando complete el formulario de registro entonces se validará que los campos: nombres, apellidos, celular, email, password y confirmar password se hayan llenado.</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th colspan="2"><b>Historia de usuario</b></th>
+  </tr>
+  <tr>
+    <td><b>Número:</b> RF02</td>
+    <td><b>Usuario:</b> Ciudadano</td>
+  </tr>
+  <tr>
+    <td colspan="2"><b>Nombre de historia:</b> Registrar ciudadano</td>
+  </tr>
+  <tr>
+    <td><b>Prioridad en negocio:</b> </td>
+    <td><b>Riesgo en desarrollo:</b> </td>
+  </tr>
+  <tr>
+    <td colspan="2"><b>Programador responsable:</b> </td>
+  </tr>
+  <tr>
+    <td colspan="2"><b>Descripción:</b>Como ciudadano quiero registrarme en la aplicación para poder informar y pedir ayuda acerca de los problemas que observe a mi alrededor.<br></td>
+  </tr>
+  <tr>
+    <td colspan="2"><b>Criterios de aceptación:</b>
+      <ul>
+        <li>Dado que el ciudado se encuentra en la vista Regístrate cuando complete el formulario de registro entonces se validará que los campos: nombres, apellidos, celular, distrito, email, password y confirmar password se hayan llenado.</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+      <th colspan="2"><b>Historia de usuario</b></th>
+  </tr>
+  <tr>
+      <td><b>Número:</b> RF03</td>
+    <td><b>Usuario:</b> Usuario</td>
+  </tr>
+  <tr>
+    <td colspan="2"><b>Nombre de historia:</b> Autenticar usuario</td>
+  </tr>
+  <tr>
+    <td><b>Prioridad en negocio:</b> </td>
+    <td><b>Riesgo en desarrollo:</b> </td>
+  </tr>
+  <tr>
+    <td colspan="2"><b>Programador responsable:</b> </td>
+  </tr>
+  <tr>
+    <td colspan="2"><b>Descripción:</b>Como usuario quiero iniciar sesión en la aplicación para poder informarme de los problemas de los ciudadanos.<br></td>
+  </tr>
+  <tr>
+    <td colspan="2"><b>Criterios de aceptación:</b>
+      <ul>
+        <li>Dado que el usuario está en la vista 'Iniciar Sesión' cuando ingreses sus credenciales entonces se validará que sus datos sean correctos, si es así redireccionará a la vista principal, caso contrario se limpiarán campos y se mostrará el mensaje: 'Credenciales inválidas. Por favor, revise sus datos e intentelo nuevamente'.</li>
+        <li>Dado que el usuario pertenece a una institución cuando inicie sesión se le mostrará los datos de su entidad.</li>
+        <li>Dado que el usuario es un ciudadano cuando inicie sesión se le mostrarán los datos de su distrito.</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+      <th colspan="2"><b>Historia de usuario</b></th>
+  </tr>
+  <tr>
+      <td><b>Número:</b> RF04</td>
+    <td><b>Usuario:</b> Ciudadano</td>
+  </tr>
+  <tr>
+    <td colspan="2"><b>Nombre de historia:</b> Registrar problema</td>
+  </tr>
+  <tr>
+    <td><b>Prioridad en negocio:</b> </td>
+    <td><b>Riesgo en desarrollo:</b> </td>
+  </tr>
+  <tr>
+    <td colspan="2"><b>Programador responsable:</b> </td>
+  </tr>
+  <tr>
+    <td colspan="2"><b>Descripción:</b>Como ciudadano quiero reportar los problemas que vea a mi alrededor para que las instituciones encargadas puedan ayudarme a solucionarlas.<br></td>
+  </tr>
+  <tr>
+    <td colspan="2"><b>Criterios de aceptación:</b>
+    <ul>
+    	<li>Dado que el ciudadano quiere registrar un problema cuando complete el formulario entonces se validará que los campos: título, descripción, imagen, autoridad y fecha se hayan llenado.</li>
+    </ul>
+</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+      <th colspan="2"><b>Historia de usuario</b></th>
+  </tr>
+  <tr>
+      <td><b>Número:</b> RF05</td>
+    <td><b>Usuario:</b> Ciudadano</td>
+  </tr>
+  <tr>
+    <td colspan="2"><b>Nombre de historia:</b> Ver problemas</td>
+  </tr>
+  <tr>
+    <td><b>Prioridad en negocio:</b> </td>
+    <td><b>Riesgo en desarrollo:</b> </td>
+  </tr>
+  <tr>
+    <td colspan="2"><b>Programador responsable:</b> </td>
+  </tr>
+  <tr>
+    <td colspan="2"><b>Descripción:</b>Como ciudadano quiero visualizar los problemas reportados para ver sus estados.<br></td>
+  </tr>
+  <tr>
+    <td colspan="2"><b>Criterios de aceptación:</b>
+      <ul>
+        <li>Dado que el ciudadano quiere ver su historial de problemas cuando se muestre la tabla entonces estarán las columnas: titulo, descripción, image url, autoridad, fecha de reporte, fecha de solución y estado.</li>
+        <li>Dado que el ciudado quiera ver su historial de problemas reportados cuando sean muchos registros entonces se mostrará una paginación.</li>
+        <li>Dado que el ciudado quiera ver su historial de problemas reportados cuando quiera buscar por alguna preferencia entonces se mostrará un filtro con las opciones: fecha de reporte, fecha de solución y estado.</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+      <th colspan="2"><b>Historia de usuario</b></th>
+  </tr>
+  <tr>
+      <td><b>Número:</b> RF06</td>
+    <td><b>Usuario:</b> Usuario</td>
+  </tr>
+  <tr>
+    <td colspan="2"><b>Nombre de historia:</b> Editar perfil</td>
+  </tr>
+  <tr>
+    <td><b>Prioridad en negocio:</b> </td>
+    <td><b>Riesgo en desarrollo:</b> </td>
+  </tr>
+  <tr>
+    <td colspan="2"><b>Programador responsable:</b> </td>
+  </tr>
+  <tr>
+    <td colspan="2"><b>Descripción:</b>Como usuario quiero actualizar mis datos para poder personalizar mi aplicación.<br></td>
+  </tr>
+  <tr>
+    <td colspan="2"><b>Criterios de aceptación:</b>
+    <ul>
+    	<li>Dado que el usuario quiere editar su perfil cuando complete el formulario entonces se validarán los campos obligatorios: nombres, apellidos, fecha de nacimiento, celular y distrito. Sin embargo, igual se mostrará el campo foto por si quiere editar su foto de perfil.</li>
+    </ul>
+</td>
+  </tr>
+</table>
+
+
+<table>
+  <tr>
       <th colspan="2"><b>Historia de usuario</b></th>
   </tr>
   <tr>
