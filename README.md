@@ -24,33 +24,33 @@ Dirigido por Carlos Vincent Tarazona Hurtado, quien es el encargado de recolecta
 Formado por Andy Eulogio Sulluchuco, Diana Regina Navarro Ruíz y Jesús Andrés Zevallos Jacobo, quienes convertirán la idea de negocio en una aplicación funcional y cumplirán con el cronograma propuesto en lo más posible.
 
 ## REQUISITOS FUNCIONALES
-•	Registrar institución
-•	Registrar autoridades
-•	Autenticar autoridades
-•	Registrar ciudadano
-•	Autenticar ciudadano
-•	Registrar problema
-•	Listar noticias (ciudadanos y autoridades)
-•	Mostrar noticias (ciudadanos y autoridades)
-•	Compartir ubicación (ciudadanos)
-•	Notificar problema registrado (ciudadanos y autoridades)
-•	Listar problemas (autoridades)
+- Registrar institución
+- Registrar autoridades
+- Autenticar autoridades
+- Registrar ciudadano
+- Autenticar ciudadano
+- Registrar problema
+- Listar noticias (ciudadanos y autoridades)
+- Mostrar noticias (ciudadanos y autoridades)
+- Compartir ubicación (ciudadanos)
+- Notificar problema registrado (ciudadanos y autoridades)
+- Listar problemas (autoridades)
 
 ## REQUISITOS NO FUNCIONALES
 
 #### a)	EFICIENCIA
-•	El sistema debe ser capaz de procesar n transacciones por segundo.
-•	Toda funcionalidad del sistema y transacción deben responder al usuario como máximo en 3 segundos.
-•	Los datos modificados en la base de datos deben ser actualizados para todos los usuarios y deben mostrar los cambios como máximo en 3 segundos.
-•	El sistema debe manejar fuentes del alfabeto en español e inglés.
+- El sistema debe ser capaz de procesar n transacciones por segundo.
+- Toda funcionalidad del sistema y transacción deben responder al usuario como máximo en 3 segundos.
+- Los datos modificados en la base de datos deben ser actualizados para todos los usuarios y deben mostrar los cambios como máximo en 3 segundos.
+- El sistema debe manejar fuentes del alfabeto en español e inglés.
 
 #### b)	USABILIDAD
-•	El tiempo de aprendizaje del sistema por un usuario deberá ser menor a 5 minutos.
+- El tiempo de aprendizaje del sistema por un usuario deberá ser menor a 5 minutos.
 
 #### c)	SEGURIDAD LÓGICA Y DE DATOS
-•	El sistema debe desarrollarse aplicando patrones de programación
-•	Él debe respaldarse cada 24 horas. Los respaldos deben ser almacenados en una localidad segura ubicada en un edificio distinto al que reside el sistema.
-•	La aplicación web debe poseer un diseño “Responsive” a fin de garantizar la adecuada visualización en múltiples dispositivos.
+- El sistema debe desarrollarse aplicando patrones de programación
+- Él debe respaldarse cada 24 horas. Los respaldos deben ser almacenados en una localidad segura ubicada en un edificio distinto al que reside el sistema.
+- La aplicación web debe poseer un diseño “Responsive” a fin de garantizar la adecuada visualización en múltiples dispositivos.
 
 ## HISTORIAS DE USUARIO
 <table>
