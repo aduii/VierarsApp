@@ -1,6 +1,7 @@
 # MuniApp
 MuniApp
 
+## Historias de usuario
 <table>
   <tr>
       <th colspan="2"><b>Historia de usuario</b></th>
