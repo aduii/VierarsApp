@@ -1,12 +1,15 @@
 # MuniApp
 
-**Tabla de contenidos**
+**TABLA DE CONTENIDO**
 1. [ANTECEDENTES](#antecedentes)
 2. [PROBLEMÁTICA](#problemática)
 3. [ALCANCE DE LA SOLUCIÓN](#alcance-de-la-solución)
 4. [DESCRIPCIÓN DE LA EMPRESA](#descripción-de-la-empresa)
 5. [REQUISITOS FUNCIONALES](#requisitos-funcionales)
 6. [REQUISITOS NO FUNCIONAES](#requisitos-no-funcionales)
+7. [HISTORIAS DE USUARIO](#historias-de-usuario)
+8. [DIAGRAMA DE BASE DE DATOS](#diagrama-de-base-de-datos)
+9. [DIAGRAMA DE CLASES](#diagrama-de-clases)
 
 
 ## ANTECEDENTES
