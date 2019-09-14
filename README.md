@@ -2,9 +2,11 @@
 
 **Tabla de contenidos**
 1. [ANTECEDENTES](#antecedentes)
-2. [PROBLEMÁTICA](#problematica)
-3. [ALCANCE DE LA SOLUCIÓN](#alcance)
-4. [DESCRIPCIÓN DE LA EMPRESA](#descripcion)
+2. [PROBLEMÁTICA](#problemática)
+3. [ALCANCE DE LA SOLUCIÓN](#alcance-de-la-solución)
+4. [DESCRIPCIÓN DE LA EMPRESA](#descripción-de-la-empresa)
+5. [REQUISITOS FUNCIONALES](#requisitos-funcionales)
+6. [REQUISITOS NO FUNCIONAES](#requisitos-no-funcionales)
 
 
 ## ANTECEDENTES
