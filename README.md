@@ -1,6 +1,6 @@
 # MuniApp
 
-**TABLA DE CONTENIDO**
+## TABLA DE CONTENIDO
 1. [ANTECEDENTES](#antecedentes)
 2. [PROBLEMÁTICA](#problemática)
 3. [ALCANCE DE LA SOLUCIÓN](#alcance-de-la-solución)
