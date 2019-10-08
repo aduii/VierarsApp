@@ -17,9 +17,9 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 public class DataBaseConfiguration {
 	
 	//Cambiar estos datos segun tu usuario y servidor
-	private static final String server = "192.168.1.2";
+	private static final String server = "localhost";
 	private static final String user = "root";
-	private static final String password = "rootpasswordgiven";
+	private static final String password = "12345678";
 	
 	@Bean
 	public LocalSessionFactoryBean sessionFactory() {
@@ -35,7 +35,7 @@ public class DataBaseConfiguration {
 	public DataSource dataSource() {
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
 		dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-		dataSource.setUrl("jdbc:mysql://"+ server + ":3306/Vierars_db");
+		dataSource.setUrl("jdbc:mysql://"+ server + ":3306/Vierars_db?serverTimezone=UTC");
 		dataSource.setUsername(user);
 		dataSource.setPassword(password);
 		return dataSource;
