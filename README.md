@@ -133,6 +133,7 @@ INSERT INTO Pais(nombre) VALUES('Perú');
 INSERT INTO Ciudad(nombre, idPais) VALUES('Lima',1);
 INSERT INTO Distrito(nombre, idCiudad) VALUES('El agustino', 1);
 INSERT INTO Distrito(nombre, idCiudad) VALUES('San isidro', 1);
+INSERT INTO Usuario(nombre, apellidos, nickname, email, password, idDistrito, direccion, puntos, tipo) VALUES('Andy','Eulogio Sulluchuco', 'andygeek', 'andy.eulogio@gmail.com', '12345678', 1, 'Jr. Lima', 5, 1);
 ````
 
 También tienen que cambiar las direcciones de su base de datos en la clase **DataBaseConfiguration.java** dentro del package **com.opensource.vierarsapp.configurations**
