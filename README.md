@@ -2,6 +2,8 @@
 
 App para el reciclaje
 
+![](https://imgur.com/F5sZjO9.png)
+
 ### Lo necesario
 
 ````sql
