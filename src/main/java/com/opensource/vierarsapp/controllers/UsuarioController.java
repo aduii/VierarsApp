@@ -70,6 +70,23 @@ public class UsuarioController {
 		return "/views/usuario/escogerTipoUsuario";
 	}
 	
+	@GetMapping("/ingresar")
+	public String ingresar(Model model) {
+		
+		Usuario usuario = new Usuario();
+		
+		model.addAttribute("user", usuario);
+		return "/views/usuario/ingresar";
+	}
+	
+	@PostMapping("/ingresarUsuario")
+	public String ingresarUsuario(@ModelAttribute Usuario user) {
+		
+		System.out.println(user.getEmail());
+		return "redirect:/";
+	}
+	
+	
 	@ModelAttribute("distritos")
 	public List<Distrito> getMultiCheckboxAllValues() {
 	    return _distritoService.listAll();
