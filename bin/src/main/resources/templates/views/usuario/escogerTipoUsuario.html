@@ -7,13 +7,15 @@
 
 	<div class="container">
 
-		<nav>
-			<h1>LA PRIMERA APP QUE TE AYUDA A RECICLAR</h1>
-		</nav>
 		<div class="container">
-			<nav class="navbar navbar-expand-lg navbar-light bg-light">
-				<h3 th:text="${message}"></h3>
-			</nav>
+			<h1>LOS TIPOS DE USAURIO SON:</h1>
+			
+			<form class="form-inline my-2 my-lg-0">
+						<a class="btn btn-outline-success my-2 my-sm-0" type="button">Usuario</a>
+						<a class="btn btn-outline-success my-2 my-sm-0" type="button" th:href="@{/views/usuario/registrarReciclador}">Reciclador</a>
+
+					</form>
+			
 		</div>
 
 	</div>

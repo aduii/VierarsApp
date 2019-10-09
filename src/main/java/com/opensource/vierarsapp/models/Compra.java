@@ -2,12 +2,15 @@ package com.opensource.vierarsapp.models;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -36,6 +39,12 @@ public class Compra implements Serializable{
 	@Column(name = "idReciclador")
 	private int idReciclador;
 	
+	//---------------------------------------------
+	@OneToMany
+	@JoinColumn(name = "idCompra")
+	private Set<DetalleCompra> compras;
+	//---------------------------------------------
+	
 	public Compra(int idCompra, Date fecha, String tipo_de_pago, double monto_total, int idUsuario, int idReciclador) {
 		super();
 		this.idCompra = idCompra;
@@ -43,7 +52,7 @@ public class Compra implements Serializable{
 		this.tipo_de_pago = tipo_de_pago;
 		this.monto_total = monto_total;
 		this.idUsuario = idUsuario;
-		this.idReciclador = idReciclador;
+		this.idReciclador = idUsuario; //CAMBIE ESTO DE idReciclador
 	}
 
 	public Compra() {
@@ -98,6 +107,5 @@ public class Compra implements Serializable{
 	public void setIdReciclador(int idReciclador) {
 		this.idReciclador = idReciclador;
 	}
-	
 	
 }

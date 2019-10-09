@@ -1,13 +1,20 @@
 package com.opensource.vierarsapp.models;
 
 import java.io.Serializable;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.CascadeType;
 
 @Entity
 @Table(name = "MateriaReciclado")
@@ -38,10 +45,13 @@ public class MateriaReciclado implements Serializable {
 	@Column(name="idUsuario")
 	private int idUsuario;
 	
-	@Column(name="idTipo")
-	private int idTipo;
+	//---------------------------------------------
+	@OneToMany
+	@JoinColumn(name = "idMaterialRreciclado")
+	private Set<DetalleCompra> compras;
+	//---------------------------------------------
 	
-	public MateriaReciclado(int idMaterialRreciclado, String nombre, String descripcion, String foto, double precio, double peso, int idUsuario, int idTipo) {
+	public MateriaReciclado(int idMaterialRreciclado, String nombre, String descripcion, String foto, double precio, double peso, int idUsuario) {
 		super();
 		this.idMaterialRreciclado = idMaterialRreciclado;
 		this.nombre = nombre;
@@ -50,7 +60,6 @@ public class MateriaReciclado implements Serializable {
 		this.precio = precio;
 		this.peso = peso;
 		this.idUsuario = idUsuario;
-		this.idTipo = idTipo;
 	}
 
 	public MateriaReciclado() {
@@ -113,14 +122,4 @@ public class MateriaReciclado implements Serializable {
 	public void setIdUsuario(int idUsuario) {
 		this.idUsuario = idUsuario;
 	}
-
-	public int getIdTipo() {
-		return idTipo;
-	}
-
-	public void setIdTipo(int idTipo) {
-		this.idTipo = idTipo;
-	}
-	
-	
 }
