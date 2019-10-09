@@ -13,8 +13,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-
-import com.opensource.vierarsapp.models.Distrito;
 import com.opensource.vierarsapp.models.Usuario;
 import com.opensource.vierarsapp.services.DistritoService;
 import com.opensource.vierarsapp.services.UsuarioService;
@@ -70,5 +68,20 @@ public class UsuarioController {
 		return "/views/usuario/escogerTipoUsuario";
 	}
 
+	@GetMapping("/ingresar")
+	public String ingresar(Model model) {
+		
+		Usuario usuario = new Usuario();
+		
+		model.addAttribute("user", usuario);
+		return "/views/usuario/ingresar";
+	}
+	
+	@PostMapping("/ingresarUsuario")
+	public String ingresarUsuario(@ModelAttribute Usuario user) {
+		
+		System.out.println(user.getEmail());
+		return "redirect:/";
+	}
 	
 }

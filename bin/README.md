@@ -127,12 +127,20 @@ ALTER TABLE MateriaReciclado ADD CONSTRAINT MateriaReciclado_Usuario FOREIGN KEY
 ALTER TABLE Usuario ADD CONSTRAINT Usuario_Distrito FOREIGN KEY Usuario_Distrito (idDistrito)
     REFERENCES Distrito (idDistrito);
 
+````
+### Script para insertar en la base de datos
 
+````sql
 
 INSERT INTO Pais(nombre) VALUES('Perú');
 INSERT INTO Ciudad(nombre, idPais) VALUES('Lima',1);
 INSERT INTO Distrito(nombre, idCiudad) VALUES('El agustino', 1);
 INSERT INTO Distrito(nombre, idCiudad) VALUES('San isidro', 1);
+INSERT INTO Usuario(nombre, apellidos, nickname, email, password, idDistrito, direccion, puntos, tipo) VALUES('Andy','Eulogio Sulluchuco', 'andygeek', 'andy.eulogio@gmail.com', '12345678', 1, 'Jr. Lima', 5, 1);
+INSERT INTO Compra(idUsuario,idReciclador,fecha, tipo_de_pago, monto_total) VALUES(1,1,'2019-1-13','Efectivo',12.5);
+INSERT INTO Tipo(nombre,tarifa_kilo) VALUES('Carton', 0.5);
+INSERT INTO MateriaReciclado(idUsuario,nombre,descripcion,foto,precio,peso,idTipo) VALUES(1,'Carton','Material reciclable','foto',15.5,25.3,1);
+
 ````
 
 También tienen que cambiar las direcciones de su base de datos en la clase **DataBaseConfiguration.java** dentro del package **com.opensource.vierarsapp.configurations**
