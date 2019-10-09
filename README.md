@@ -128,7 +128,7 @@ ALTER TABLE Usuario ADD CONSTRAINT Usuario_Distrito FOREIGN KEY Usuario_Distrito
     REFERENCES Distrito (idDistrito);
 
 ````
-#### Script para insertar en la base de datos
+### Script para insertar en la base de datos
 
 ````sql
 
