@@ -17,7 +17,7 @@ public class DataBaseConfiguration {
 	//Cambiar estos datos segun tu usuario y servidor
 	private static final String server = "localhost";
 	private static final String user = "root";
-	private static final String password = "12345678";
+	private static final String password = "rootpasswordgiven";
 	
 	@Bean
 	public LocalSessionFactoryBean sessionFactory() {
