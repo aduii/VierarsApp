@@ -1,0 +1,5 @@
+INSERT INTO Compra(idUsuario,idReciclador,fecha, tipo_de_pago, monto_total) VALUES(1,1,5/6/2019,'Efectivo',12.5)
+
+INSERT INTO Materiareciclado(idUsuario,nombre,descripcion,foto,precio,peso,idTipo) VALUES(1,'Carton','Material reciclable','foto',15.5,25.3,1)
+
+INSERT INTO Tipo(nombre,tarifa_kilo) VALUES('Carton', 0.5)
