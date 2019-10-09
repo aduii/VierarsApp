@@ -69,6 +69,11 @@ public class UsuarioController {
 		
 		return "/views/usuario/escogerTipoUsuario";
 	}
+	
+	@ModelAttribute("distritos")
+	public List<Distrito> getMultiCheckboxAllValues() {
+	    return _distritoService.listAll();
+	}
 
 	
 }

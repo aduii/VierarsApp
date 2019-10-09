@@ -15,9 +15,9 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 public class DataBaseConfiguration {
 	
 	//Cambiar estos datos segun tu usuario y servidor
-	private static final String server = "192.168.1.2";
+	private static final String server = "localhost";
 	private static final String user = "root";
-	private static final String password = "rootpasswordgiven";
+	private static final String password = "12345678";
 	
 	@Bean
 	public LocalSessionFactoryBean sessionFactory() {
