@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -35,8 +37,10 @@ public class Usuario implements Serializable {
 	@Column(name = "password")
 	private String password;
 	
-	@Column(name = "idDistrito")
-	private int idDistrito;
+	@ManyToOne
+	@JoinColumn(name = "idDistrito")
+	private Distrito distrito;
+
 	
 	@Column(name = "direccion")
 	private String direccion;
@@ -48,7 +52,7 @@ public class Usuario implements Serializable {
 	private int tipo;
 
 	
-	public Usuario(int idUsuario, String nombre, String apellidos, String nickname, String email, String password,int idDistrito, String direccion,String puntos,int tipo) {
+	public Usuario(int idUsuario, String nombre, String apellidos, String nickname, String email, String password,Distrito distrito, String direccion,String puntos,int tipo) {
 		super();
 		this.idUsuario= idUsuario;
 		this.nombre = nombre;
@@ -56,7 +60,7 @@ public class Usuario implements Serializable {
 		this.nickname = nickname;
 		this.email = email;
 		this.password = password;
-		this.idDistrito = idDistrito;
+		this.distrito = distrito;
 		this.direccion = direccion;
 		this.puntos = puntos;
 		this.tipo = tipo;
@@ -115,12 +119,14 @@ public class Usuario implements Serializable {
 		this.password = password;
 	}
 
-	public int getIdDistrito() {
-		return idDistrito;
+	
+
+	public Distrito getDistrito() {
+		return distrito;
 	}
 
-	public void setIdDistrito(int idDistrito) {
-		this.idDistrito = idDistrito;
+	public void setDistrito(Distrito distrito) {
+		this.distrito = distrito;
 	}
 
 	public String getDireccion() {

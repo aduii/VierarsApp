@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -23,15 +25,17 @@ private static final long serialVersionUID = 1L;
 	@Column(name = "nombre")
 	private String nombre;
 	
-	@Column(name = "idPais")
-	private int idPais;
+	@ManyToOne
+	@JoinColumn(name = "idPais")
+	private Pais pais;
+
 
 	
-	public Ciudad(int idCiudad, String nombre,int idPais) {
+	public Ciudad(int idCiudad, String nombre,Pais pais) {
 		super();
 		this.idCiudad = idCiudad;
 		this.nombre = nombre;
-		this.idPais = idPais;
+		this.pais = pais;
 	}
 
 	public Ciudad() {
@@ -55,13 +59,15 @@ private static final long serialVersionUID = 1L;
 		this.nombre = nombre;
 	}
 
-	public int getIdPais() {
-		return idPais;
+	public Pais getPais() {
+		return pais;
 	}
 
-	public void setIdPais(int idPais) {
-		this.idPais = idPais;
+	public void setPais(Pais pais) {
+		this.pais = pais;
 	}
+
+
 	
 
 }

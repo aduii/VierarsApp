@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.opensource.vierarsapp.models.Ciudad;
 import com.opensource.vierarsapp.models.Pais;
 import com.opensource.vierarsapp.services.CiudadService;
+import com.opensource.vierarsapp.services.PaisService;
 
 @Controller
 @RequestMapping("ciudad")
@@ -20,6 +21,7 @@ import com.opensource.vierarsapp.services.CiudadService;
 public class CiudadController {
 	@Autowired
 	CiudadService _ciudadService;
+	
 	
 	//GET
 		@RequestMapping(value = "/listar", method = RequestMethod.GET, headers = "Accept=application/json")
@@ -30,6 +32,7 @@ public class CiudadController {
 				return new ResponseEntity<List<Ciudad>>(HttpStatus.NO_CONTENT);
 			}
 			return new ResponseEntity<List<Ciudad>>(ciudades, HttpStatus.OK);
+			
 		}
 		
 }
