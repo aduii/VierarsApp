@@ -5,21 +5,21 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
-import com.opensource.vierarsapp.models.Ciudad;
+import com.opensource.vierarsapp.models.DetalleCompra;
 
 @Repository
-public class CiudadRepository extends AbstractSession implements ICiudadRepository, Serializable {
+public class DetalleCompraRepository extends AbstractSession implements IDetalleCompraRepository, Serializable{
 
 	private static final long serialVersionUID = 1L;
-	
+
 	@Override
-	public boolean insert(Ciudad t) {
+	public boolean insert(DetalleCompra t) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
-	public boolean update(Ciudad t) {
+	public boolean update(DetalleCompra t) {
 		// TODO Auto-generated method stub
 		return false;
 	}
@@ -31,12 +31,12 @@ public class CiudadRepository extends AbstractSession implements ICiudadReposito
 	}
 
 	@Override
-	public List<Ciudad> listAll() {
-		return getSession().createQuery("from Ciudad").list();
+	public List<DetalleCompra> listAll() {
+		return getSession().createQuery("from DetalleCompra").list();
 	}
 
 	@Override
-	public Ciudad finbyId(int id) {
+	public DetalleCompra finbyId(int id) {
 		// TODO Auto-generated method stub
 		return null;
 	}

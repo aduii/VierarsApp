@@ -2,12 +2,16 @@ package com.opensource.vierarsapp.models;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -30,20 +34,25 @@ public class Compra implements Serializable{
 	@Column(name = "monto_total")
 	private double monto_total;
 	
-	@Column(name = "idUsuario")
-	private int idUsuario;
+	@ManyToOne
+	@JoinColumn(name="idUsuario")
+	private Usuario idUsuario;
 	
 	@Column(name = "idReciclador")
-	private int idReciclador;
+	private Usuario idReciclador;
 	
-	public Compra(int idCompra, Date fecha, String tipo_de_pago, double monto_total, int idUsuario, int idReciclador) {
+	@OneToMany(mappedBy="compra")
+	Set<DetalleCompra> precio_final;
+	
+	public Compra(int idCompra, Date fecha, String tipo_de_pago, double monto_total, Usuario idUsuario, int idReciclador, Set<DetalleCompra> precio_final) {
 		super();
 		this.idCompra = idCompra;
 		this.fecha = fecha;
 		this.tipo_de_pago = tipo_de_pago;
 		this.monto_total = monto_total;
 		this.idUsuario = idUsuario;
-		this.idReciclador = idReciclador;
+		this.idReciclador = idUsuario;
+		this.precio_final = (Set<DetalleCompra>) precio_final;
 	}
 
 	public Compra() {
@@ -83,21 +92,28 @@ public class Compra implements Serializable{
 		this.monto_total = monto_total;
 	}
 
-	public int getIdUsuario() {
+	public Usuario getIdUsuario() {
 		return idUsuario;
 	}
 
-	public void setIdUsuario(int idUsuario) {
+	public void setIdUsuario(Usuario idUsuario) {
 		this.idUsuario = idUsuario;
 	}
 
-	public int getIdReciclador() {
+	public Usuario getIdReciclador() {
 		return idReciclador;
 	}
 
-	public void setIdReciclador(int idReciclador) {
+	public void setIdReciclador(Usuario idReciclador) {
 		this.idReciclador = idReciclador;
 	}
-	
+
+	public Set<DetalleCompra> getPrecio_final() {
+		return precio_final;
+	}
+
+	public void setPrecio_final(Set<DetalleCompra> precio_final) {
+		this.precio_final = precio_final;
+	}
 	
 }

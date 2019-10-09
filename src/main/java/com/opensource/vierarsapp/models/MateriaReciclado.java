@@ -1,12 +1,16 @@
 package com.opensource.vierarsapp.models;
 
 import java.io.Serializable;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -35,13 +39,18 @@ public class MateriaReciclado implements Serializable {
 	@Column(name = "peso")
 	private double peso;
 	
-	@Column(name="idUsuario")
-	private int idUsuario;
+	@ManyToOne
+	@JoinColumn(name="idUsuario")
+	private Usuario idUsuario;
 	
-	@Column(name="idTipo")
-	private int idTipo;
+	@ManyToOne
+	@JoinColumn(name = "idTipo")
+	private Tipo idTipo;
 	
-	public MateriaReciclado(int idMaterialRreciclado, String nombre, String descripcion, String foto, double precio, double peso, int idUsuario, int idTipo) {
+	@OneToMany(mappedBy="materiareciclado")
+	Set<DetalleCompra> precio_final;
+	
+	public MateriaReciclado(int idMaterialRreciclado, String nombre, String descripcion, String foto, double precio, double peso, Usuario idUsuario, Tipo idTipo, Set<DetalleCompra> precio_final) {
 		super();
 		this.idMaterialRreciclado = idMaterialRreciclado;
 		this.nombre = nombre;
@@ -51,6 +60,7 @@ public class MateriaReciclado implements Serializable {
 		this.peso = peso;
 		this.idUsuario = idUsuario;
 		this.idTipo = idTipo;
+		this.precio_final = (Set<DetalleCompra>) precio_final;
 	}
 
 	public MateriaReciclado() {
@@ -106,21 +116,28 @@ public class MateriaReciclado implements Serializable {
 		this.peso = peso;
 	}
 
-	public int getIdUsuario() {
+	public Usuario getIdUsuario() {
 		return idUsuario;
 	}
 
-	public void setIdUsuario(int idUsuario) {
+	public void setIdUsuario(Usuario idUsuario) {
 		this.idUsuario = idUsuario;
 	}
 
-	public int getIdTipo() {
+	public Tipo getIdTipo() {
 		return idTipo;
 	}
 
-	public void setIdTipo(int idTipo) {
+	public void setIdTipo(Tipo idTipo) {
 		this.idTipo = idTipo;
 	}
-	
+
+	public Set<DetalleCompra> getPrecio_final() {
+		return precio_final;
+	}
+
+	public void setPrecio_final(Set<DetalleCompra> precio_final) {
+		this.precio_final = precio_final;
+	}
 	
 }

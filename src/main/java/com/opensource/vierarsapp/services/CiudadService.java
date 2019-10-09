@@ -19,9 +19,8 @@ public class CiudadService implements ICiudadService {
 	
 	@Override
 	public boolean insert(Ciudad t) {
-		return _ciudadRepository.insert(t);
-		
-}
+		return _ciudadRepository.insert(t);	
+	}
 
 	@Override
 	public boolean update(Ciudad t) {
@@ -42,5 +41,4 @@ public class CiudadService implements ICiudadService {
 	public Ciudad finbyId(int id) {
 		return _ciudadRepository.finbyId(id);
 	}
-
 }

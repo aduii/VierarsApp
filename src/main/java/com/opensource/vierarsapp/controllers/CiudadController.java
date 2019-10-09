@@ -9,11 +9,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-
 import com.opensource.vierarsapp.models.Ciudad;
-import com.opensource.vierarsapp.models.Pais;
 import com.opensource.vierarsapp.services.CiudadService;
-import com.opensource.vierarsapp.services.PaisService;
+
 
 @Controller
 @RequestMapping("ciudad")
