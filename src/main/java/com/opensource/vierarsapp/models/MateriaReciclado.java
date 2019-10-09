@@ -10,8 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "MaterialReciclado")
-public class MaterialReciclado implements Serializable {
+@Table(name = "MateriaReciclado")
+public class MateriaReciclado implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	
@@ -41,7 +41,7 @@ public class MaterialReciclado implements Serializable {
 	@Column(name="idTipo")
 	private int idTipo;
 	
-	public MaterialReciclado(int idMaterialRreciclado, String nombre, String descripcion, String foto, double precio, double peso, int idUsuario, int idTipo) {
+	public MateriaReciclado(int idMaterialRreciclado, String nombre, String descripcion, String foto, double precio, double peso, int idUsuario, int idTipo) {
 		super();
 		this.idMaterialRreciclado = idMaterialRreciclado;
 		this.nombre = nombre;
@@ -53,7 +53,7 @@ public class MaterialReciclado implements Serializable {
 		this.idTipo = idTipo;
 	}
 
-	public MaterialReciclado() {
+	public MateriaReciclado() {
 		super();
 		// TODO Auto-generated constructor stub
 	}

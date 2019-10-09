@@ -5,7 +5,7 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.opensource.vierarsapp.dao.IMaterialRecicladoRepository;
-import com.opensource.vierarsapp.models.MaterialReciclado;
+import com.opensource.vierarsapp.models.MateriaReciclado;
 
 @Service("materialrecicladoService")
 @Transactional
@@ -15,12 +15,12 @@ public class MaterialRecicladoService implements IMaterialRecicladoService{
 	private IMaterialRecicladoRepository _materialrecicladoRepository;
 
 	@Override
-	public boolean insert(MaterialReciclado t) {
+	public boolean insert(MateriaReciclado t) {
 		return _materialrecicladoRepository.insert(t);
 	}
 
 	@Override
-	public boolean update(MaterialReciclado t) {
+	public boolean update(MateriaReciclado t) {
 		return _materialrecicladoRepository.update(t);
 	}
 
@@ -30,12 +30,12 @@ public class MaterialRecicladoService implements IMaterialRecicladoService{
 	}
 
 	@Override
-	public List<MaterialReciclado> listAll() {
+	public List<MateriaReciclado> listAll() {
 		return _materialrecicladoRepository.listAll();
 	}
 
 	@Override
-	public MaterialReciclado finbyId(int id) {
+	public MateriaReciclado finbyId(int id) {
 		return _materialrecicladoRepository.finbyId(id);
 	}
 }

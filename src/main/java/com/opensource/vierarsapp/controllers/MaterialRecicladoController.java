@@ -9,7 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import com.opensource.vierarsapp.models.MaterialReciclado;
+import com.opensource.vierarsapp.models.MateriaReciclado;
 import com.opensource.vierarsapp.services.MaterialRecicladoService;
 
 @Controller
@@ -20,12 +20,12 @@ public class MaterialRecicladoController {
 	MaterialRecicladoService _materialrecicladoService;
 	
 	@RequestMapping(value = "/listar", method = RequestMethod.GET, headers = "Accept=application/json")
-	public ResponseEntity<List<MaterialReciclado>> getStudent(){
-		List<MaterialReciclado> materialesreciclados = new ArrayList<>();
+	public ResponseEntity<List<MateriaReciclado>> getStudent(){
+		List<MateriaReciclado> materialesreciclados = new ArrayList<>();
 		materialesreciclados = _materialrecicladoService.listAll();
 		if(materialesreciclados.isEmpty()) {
-			return new ResponseEntity<List<MaterialReciclado>>(HttpStatus.NO_CONTENT);
+			return new ResponseEntity<List<MateriaReciclado>>(HttpStatus.NO_CONTENT);
 		}
-		return new ResponseEntity<List<MaterialReciclado>>(materialesreciclados, HttpStatus.OK);
+		return new ResponseEntity<List<MateriaReciclado>>(materialesreciclados, HttpStatus.OK);
 	}
 }
