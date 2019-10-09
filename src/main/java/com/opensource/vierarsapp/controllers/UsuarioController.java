@@ -7,6 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -16,12 +20,14 @@ import com.opensource.vierarsapp.services.DistritoService;
 import com.opensource.vierarsapp.services.UsuarioService;
 
 @Controller
-@RequestMapping("usuario")
+@RequestMapping("/views/usuario")
 
 public class UsuarioController {
 	@Autowired
 	UsuarioService _usuarioService;
 
+	@Autowired
+	DistritoService _distritoService;
 	
 	//GET
 	@RequestMapping(value = "/listar", method = RequestMethod.GET, headers = "Accept=application/json")
@@ -36,5 +42,33 @@ public class UsuarioController {
 	
 	}
 	
+	@GetMapping("/registrarReciclador")
+	public String registrarReciclador(Model model) {
+		
+		Usuario reciclador = new Usuario();
+		
+		model.addAttribute("titulo", "Registrar Reciclador");
+		model.addAttribute("reciclador", reciclador);
+
+		return "/views/usuario/registrarReciclador";
+	}
+	
+	@PostMapping("/guardarReciclador")
+	public String guardar(@ModelAttribute Usuario reciclador) {
+		//Tipo (1. usuario)(2. Reciclador)
+		
+		reciclador.setPuntos(0);
+		reciclador.setTipo(2);
+		reciclador.setDistrito(_distritoService.finbyId(1));
+		_usuarioService.insert(reciclador);
+		return "redirect:/";
+	}
+	
+	@GetMapping("/escogerTipoUsuario")
+	public String escogerTipoUsuario() {
+		
+		return "/views/usuario/escogerTipoUsuario";
+	}
+
 	
 }

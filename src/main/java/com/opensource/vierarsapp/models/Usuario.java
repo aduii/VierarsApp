@@ -46,13 +46,13 @@ public class Usuario implements Serializable {
 	private String direccion;
 	
 	@Column(name = "puntos")
-	private String puntos;
+	private int puntos;
 	
 	@Column(name = "tipo")
 	private int tipo;
 
 	
-	public Usuario(int idUsuario, String nombre, String apellidos, String nickname, String email, String password,Distrito distrito, String direccion,String puntos,int tipo) {
+	public Usuario(int idUsuario, String nombre, String apellidos, String nickname, String email, String password,Distrito distrito, String direccion,int puntos,int tipo) {
 		super();
 		this.idUsuario= idUsuario;
 		this.nombre = nombre;
@@ -137,11 +137,11 @@ public class Usuario implements Serializable {
 		this.direccion = direccion;
 	}
 
-	public String getPuntos() {
+	public int getPuntos() {
 		return puntos;
 	}
 
-	public void setPuntos(String puntos) {
+	public void setPuntos(int puntos) {
 		this.puntos = puntos;
 	}
 

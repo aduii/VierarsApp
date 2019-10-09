@@ -14,7 +14,12 @@ public class UsuarioRepository extends AbstractSession implements IUsuarioReposi
 	
 	@Override
 	public boolean insert(Usuario t) {
-		// TODO Auto-generated method stub
+		try {
+			getSession().persist(t);
+			return true;
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
 		return false;
 	}
 
