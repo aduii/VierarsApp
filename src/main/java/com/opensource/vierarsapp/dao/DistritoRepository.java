@@ -36,8 +36,13 @@ public class DistritoRepository extends AbstractSession implements IDistritoRepo
 
 	@Override
 	public Distrito finbyId(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		Distrito dist = new Distrito();
+		try {
+			dist = getSession().find(Distrito.class, id);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		return dist;
 	}
 
 }

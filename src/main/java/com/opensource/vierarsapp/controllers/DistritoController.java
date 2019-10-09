@@ -23,13 +23,17 @@ public class DistritoController {
 	DistritoService _distritoService;
 
 	//GET
-			@RequestMapping(value = "/listar", method = RequestMethod.GET, headers = "Accept=application/json")
-			public ResponseEntity<List<Distrito>> getDistrito(){
-				List<Distrito> distritos = new ArrayList<>();
-				distritos = _distritoService.listAll();
-				if(distritos.isEmpty()) {
-					return new ResponseEntity<List<Distrito>>(HttpStatus.NO_CONTENT);
-				}
-				return new ResponseEntity<List<Distrito>>(distritos, HttpStatus.OK);
-			}
+	@RequestMapping(value = "/listar", method = RequestMethod.GET, headers = "Accept=application/json")
+	public ResponseEntity<List<Distrito>> getDistrito(){
+		List<Distrito> distritos = new ArrayList<>();
+		distritos = _distritoService.listAll();
+		if(distritos.isEmpty()) {
+			return new ResponseEntity<List<Distrito>>(HttpStatus.NO_CONTENT);
+		}
+		return new ResponseEntity<List<Distrito>>(distritos, HttpStatus.OK);
+	}
+	
+	
+			
+			
 }
