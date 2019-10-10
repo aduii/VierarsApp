@@ -5,10 +5,12 @@
 	<header th:replace="main_templates/template :: header"></header>
 	<div class="container">
 		<div class="container">
-			<h1>LOS TIPOS DE USAURIO SON:</h1>
+			<h1 class="text-center" style="font-size:1.5rem; margin-top:50px">Tu eres</h1>
 			<form class="form-inline my-2 my-lg-0">
-					<a class="btn btn-outline-success my-2 my-sm-0" type="button" th:href="@{/views/usuario/registrarUsuario}">Usuario</a>
-					<a class="btn btn-outline-success my-2 my-sm-0" type="button" th:href="@{/views/usuario/registrarReciclador}">Reciclador</a>
+				<div class="text-center" style="width:100%; margin-top:20px">
+					<a class="btn btn-outline-success" style="margin:25px" type="button" th:href="@{/views/usuario/registrarUsuario}">Usuario</a>
+					<a class="btn btn-outline-success" style="margin:25px" type="button" th:href="@{/views/usuario/registrarReciclador}">Reciclador</a>
+				</div>
 			</form>
 		</div>
 	</div>
