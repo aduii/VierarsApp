@@ -45,5 +45,16 @@ public class UsuarioRepository extends AbstractSession implements IUsuarioReposi
 		// TODO Auto-generated method stub
 		return null;
 	}
+	
+	@Override
+	public Usuario finbyEmail(String Email) {
+		Usuario user = new Usuario();
+		try {
+			user = getSession().find(Usuario.class, Email);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		return user;
+	}
 
 }

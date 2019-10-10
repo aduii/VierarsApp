@@ -45,5 +45,9 @@ public class UsuarioService implements IUsuarioService{
 		
 		return _usuarioRepository.finbyId(id);
 	}
-
+	
+	@Override
+	public Usuario finbyEmail(String Email) {
+		return _usuarioRepository.finbyEmail(Email);
+	}
 }
