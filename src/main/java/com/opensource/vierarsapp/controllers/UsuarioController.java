@@ -79,13 +79,11 @@ public class UsuarioController {
 		return "/views/usuario/ingresar";
 	}
 	
-	
 	@ModelAttribute("distritos")
 	public List<Distrito> getMultiCheckboxAllValues() {
 	    return _distritoService.listAll();
 	}
 
-	
 	@PostMapping("/ingresarUsuario")
 	public String ingresarUsuario(@ModelAttribute Usuario user) {
 		
@@ -93,4 +91,20 @@ public class UsuarioController {
 		return "redirect:/";
 	}
 	
+	@GetMapping("/registrarUsuario")
+	public String registrarUsuario(Model model) {
+		Usuario usuario = new Usuario();
+		model.addAttribute("titulo", "Registrar Usuario");
+		model.addAttribute("usuario", usuario);
+		return "/views/usuario/registrarUsuario";
+	}
+	
+	@PostMapping("/guardarUsuario")
+	public String guardarUsuario(@ModelAttribute Usuario usuario) {
+		usuario.setPuntos(0);
+		usuario.setTipo(1);
+		usuario.setDistrito(_distritoService.finbyId(1));
+		_usuarioService.insert(usuario);
+		return "redirect:/";
+	}
 }

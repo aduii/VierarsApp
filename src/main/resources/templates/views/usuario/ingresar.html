@@ -2,22 +2,12 @@
 <html xmlns:th="http://www.thymeleaft.org">
 <head th:replace="main_templates/template :: head"></head>
 <body>
-
 	<header th:replace="main_templates/template :: header"></header>
-
-	
-
-
 	<div class="container">
 		<div class="card">
 			<div class="card-header" > Ingresar </div>
-			
-			<div class="card-body">
-				
-						
-				<form th:object="${user}"
-					th:action="@{/views/usuario/ingresarUsuario}" method="post">
-					
+			<div class="card-body">		
+				<form th:object="${user}" th:action="@{/views/usuario/ingresarUsuario}" method="post">
 					<div class="form-row">
 						<div class="form-group col-md-3">
 							<label for="inputEmail4">Email</label> <input type="email"
