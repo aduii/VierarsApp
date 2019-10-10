@@ -42,8 +42,9 @@ public class MateriaReciclado implements Serializable {
 	@Column(name = "peso")
 	private double peso;
 	
-	@Column(name="idUsuario")
-	private int idUsuario;
+	@ManyToOne
+	@JoinColumn(name = "idUsuario")
+	private Usuario usuario;
 	
 	//---------------------------------------------
 	@OneToMany
@@ -51,7 +52,11 @@ public class MateriaReciclado implements Serializable {
 	private Set<DetalleCompra> compras;
 	//---------------------------------------------
 	
-	public MateriaReciclado(int idMaterialRreciclado, String nombre, String descripcion, String foto, double precio, double peso, int idUsuario) {
+	@ManyToOne
+	@JoinColumn(name = "idTipo")
+	private Tipo tipo;
+	
+	public MateriaReciclado(int idMaterialRreciclado, String nombre, String descripcion, String foto, double precio, double peso, Usuario usuario,Tipo tipo) {
 		super();
 		this.idMaterialRreciclado = idMaterialRreciclado;
 		this.nombre = nombre;
@@ -59,7 +64,8 @@ public class MateriaReciclado implements Serializable {
 		this.foto = foto;
 		this.precio = precio;
 		this.peso = peso;
-		this.idUsuario = idUsuario;
+		this.usuario = usuario;
+		this.tipo = tipo;
 	}
 
 	public MateriaReciclado() {
@@ -115,11 +121,21 @@ public class MateriaReciclado implements Serializable {
 		this.peso = peso;
 	}
 
-	public int getIdUsuario() {
-		return idUsuario;
+	public Usuario getUsuario() {
+		return usuario;
 	}
 
-	public void setIdUsuario(int idUsuario) {
-		this.idUsuario = idUsuario;
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
 	}
+
+	public Tipo getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(Tipo tipo) {
+		this.tipo = tipo;
+	}
+
+	
 }
