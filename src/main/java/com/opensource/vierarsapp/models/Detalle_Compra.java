@@ -13,9 +13,9 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "detallecompra")
-public class DetalleCompra implements Serializable {
-	
+@Table(name = "detalle_compra")
+public class Detalle_Compra implements Serializable {
+
 	private static final long serialVersionUID = 1L;
 	
 	@Id
@@ -37,14 +37,14 @@ public class DetalleCompra implements Serializable {
 	
 	//---------------------------------------------
 	
-	public DetalleCompra(MateriaReciclado idMaterialRreciclado, Compra idCompra, double precioFinal) {
+	public Detalle_Compra(MateriaReciclado idMaterialRreciclado, Compra idCompra, double precioFinal) {
 		super();
 		this.idMaterialRreciclado = idMaterialRreciclado;
 		this.idCompra = idCompra;
 		this.precioFinal = precioFinal;
 	}
 	
-	public DetalleCompra() {
+	public Detalle_Compra() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -72,7 +72,5 @@ public class DetalleCompra implements Serializable {
 	public void setIdCompra(Compra idCompra) {
 		this.idCompra = idCompra;
 	}
-	
-	
 	
 }

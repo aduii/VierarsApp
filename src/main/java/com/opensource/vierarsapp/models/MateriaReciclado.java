@@ -49,7 +49,7 @@ public class MateriaReciclado implements Serializable {
 	//---------------------------------------------
 	@OneToMany
 	@JoinColumn(name = "idMaterialRreciclado")
-	private Set<DetalleCompra> compras;
+	private Set<Detalle_Compra> compras;
 	//---------------------------------------------
 	
 	@ManyToOne
