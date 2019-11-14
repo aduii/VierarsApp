@@ -41,15 +41,15 @@
 						</div>
 					</div>
 					<div class="form-group col-md-6">
-						<label for="inputAddress">Dirección</label> <input type="text"
+						<label for="inputAddress">Direcciï¿½n</label> <input type="text"
 							th:field="*{direccion}" class="form-control" id="inputAddress"
 							placeholder="">
 					</div>
 					<div class="form-group col-md-4">
-						<label for="inputState">Distrito</label>						
-						<select class="form-control" name="selectDistrict" >
-            				<option th:each="distrito:${distritos}" th:value="${distrito}" th:text="${distrito.nombre}"></option>
-             			</select>	
+						<label for="inputState">Distrito</label>
+						<select id="inputState"	class="form-control"  th:field="*{distrito.idDistrito}">
+							<option th:each="distrito:${distritos}" th:value="${distrito.idDistrito}"	th:text="${distrito.nombre}"></option>
+						</select>
 					</div>
 					<button type="submit" class="btn btn-primary col-md-2">Registrar</button>
 				</form>

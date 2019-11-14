@@ -1,13 +1,20 @@
 package com.opensource.vierarsapp.models;
 
 import java.io.Serializable;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.CascadeType;
 
 @Entity
 @Table(name = "MateriaReciclado")
@@ -35,13 +42,21 @@ public class MateriaReciclado implements Serializable {
 	@Column(name = "peso")
 	private double peso;
 	
-	@Column(name="idUsuario")
-	private int idUsuario;
+	@ManyToOne
+	@JoinColumn(name = "idUsuario")
+	private Usuario usuario;
 	
-	@Column(name="idTipo")
-	private int idTipo;
+	//---------------------------------------------
+	@OneToMany
+	@JoinColumn(name = "idMaterialRreciclado")
+	private Set<Detalle_Compra> compras;
+	//---------------------------------------------
 	
-	public MateriaReciclado(int idMaterialRreciclado, String nombre, String descripcion, String foto, double precio, double peso, int idUsuario, int idTipo) {
+	@ManyToOne
+	@JoinColumn(name = "idTipo")
+	private Tipo tipo;
+	
+	public MateriaReciclado(int idMaterialRreciclado, String nombre, String descripcion, String foto, double precio, double peso, Usuario usuario,Tipo tipo) {
 		super();
 		this.idMaterialRreciclado = idMaterialRreciclado;
 		this.nombre = nombre;
@@ -49,8 +64,8 @@ public class MateriaReciclado implements Serializable {
 		this.foto = foto;
 		this.precio = precio;
 		this.peso = peso;
-		this.idUsuario = idUsuario;
-		this.idTipo = idTipo;
+		this.usuario = usuario;
+		this.tipo = tipo;
 	}
 
 	public MateriaReciclado() {
@@ -106,21 +121,21 @@ public class MateriaReciclado implements Serializable {
 		this.peso = peso;
 	}
 
-	public int getIdUsuario() {
-		return idUsuario;
+	public Usuario getUsuario() {
+		return usuario;
 	}
 
-	public void setIdUsuario(int idUsuario) {
-		this.idUsuario = idUsuario;
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
 	}
 
-	public int getIdTipo() {
-		return idTipo;
+	public Tipo getTipo() {
+		return tipo;
 	}
 
-	public void setIdTipo(int idTipo) {
-		this.idTipo = idTipo;
+	public void setTipo(Tipo tipo) {
+		this.tipo = tipo;
 	}
-	
+
 	
 }

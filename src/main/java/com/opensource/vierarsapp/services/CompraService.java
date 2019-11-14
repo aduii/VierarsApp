@@ -1,6 +1,7 @@
 package com.opensource.vierarsapp.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import javax.transaction.Transactional;
 
@@ -18,29 +19,31 @@ public class CompraService implements ICompraService{
 	private ICompraRepository _compraRepository;
 
 	@Override
-	public boolean insert(Compra t) {
-		return _compraRepository.insert(t);
+	public void insert(Compra t) {
+		_compraRepository.save(t);
 	}
 
 	@Override
-	public boolean update(Compra t) {
-		return _compraRepository.update(t);
+	public void update(Compra t) {
+		_compraRepository.save(t);
 	}
 
 	@Override
-	public boolean delete(int id) {
-		return _compraRepository.delete(id);
+	public void delete(int id) {
+		_compraRepository.deleteById(id);
 	}
 
 	@Override
 	public List<Compra> listAll() {
-		return _compraRepository.listAll();
+		return _compraRepository.findAll();
 	}
 
 	@Override
-	public Compra finbyId(int id) {
-		return _compraRepository.finbyId(id);
+	public Optional<Compra> finbyId(int id) {
+		return _compraRepository.findById(id);
 	}
+
+
 	
 	
 }

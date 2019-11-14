@@ -2,12 +2,16 @@ package com.opensource.vierarsapp.models;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -30,20 +34,24 @@ public class Compra implements Serializable{
 	@Column(name = "monto_total")
 	private double monto_total;
 	
-	@Column(name = "idUsuario")
-	private int idUsuario;
+	//---------------------------------------------
+	@ManyToOne
+	@JoinColumn(name = "idUsuario")
+	private Usuario usuario;
 	
-	@Column(name = "idReciclador")
-	private int idReciclador;
+	@ManyToOne
+	@JoinColumn(name = "idReciclador")
+	private Usuario reciclador;
+	//---------------------------------------------
 	
-	public Compra(int idCompra, Date fecha, String tipo_de_pago, double monto_total, int idUsuario, int idReciclador) {
+	public Compra(int idCompra, Date fecha, String tipo_de_pago, double monto_total, Usuario usuario,Usuario reciclador) {
 		super();
 		this.idCompra = idCompra;
 		this.fecha = fecha;
 		this.tipo_de_pago = tipo_de_pago;
 		this.monto_total = monto_total;
-		this.idUsuario = idUsuario;
-		this.idReciclador = idReciclador;
+		this.usuario = usuario;
+		this.reciclador = reciclador; //CAMBIE ESTO DE idReciclador
 	}
 
 	public Compra() {
@@ -83,21 +91,22 @@ public class Compra implements Serializable{
 		this.monto_total = monto_total;
 	}
 
-	public int getIdUsuario() {
-		return idUsuario;
+	public Usuario getUsuario() {
+		return usuario;
 	}
 
-	public void setIdUsuario(int idUsuario) {
-		this.idUsuario = idUsuario;
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
 	}
 
-	public int getIdReciclador() {
-		return idReciclador;
+	public Usuario getReciclador() {
+		return reciclador;
 	}
 
-	public void setIdReciclador(int idReciclador) {
-		this.idReciclador = idReciclador;
+	public void setReciclador(Usuario reciclador) {
+		this.reciclador = reciclador;
 	}
+
 	
 	
 }

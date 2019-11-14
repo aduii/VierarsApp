@@ -1,6 +1,7 @@
 package com.opensource.vierarsapp.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import javax.transaction.Transactional;
 
@@ -18,32 +19,30 @@ public class UsuarioService implements IUsuarioService{
 	private IUsuarioRepository _usuarioRepository;
 	
 	@Override
-	public boolean insert(Usuario t) {
-		return _usuarioRepository.insert(t);
+	public void insert(Usuario t) {
+		_usuarioRepository.save(t);
 	}
 
 	@Override
-	public boolean update(Usuario t) {
-		
-		return _usuarioRepository.update(t);
+	public void update(Usuario t) {
+		_usuarioRepository.save(t);
 	}
 
 	@Override
-	public boolean delete(int id) {
-		
-		return _usuarioRepository.delete(id);
+	public void delete(int id) {
+		_usuarioRepository.deleteById(id);
 	}
 
 	@Override
 	public List<Usuario> listAll() {
 		
-		return _usuarioRepository.listAll();
+		return _usuarioRepository.findAll();
 	}
 
 	@Override
-	public Usuario finbyId(int id) {
-		
-		return _usuarioRepository.finbyId(id);
+	public Optional<Usuario> finbyId(int id) {
+		return _usuarioRepository.findById(id);
 	}
+
 
 }

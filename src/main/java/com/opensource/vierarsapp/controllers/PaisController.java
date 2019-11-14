@@ -8,11 +8,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
 import com.opensource.vierarsapp.models.Pais;
 import com.opensource.vierarsapp.services.PaisService;
 
-@Controller
-@RequestMapping("pais")
+@RestController
+@RequestMapping("/pais")
 public class PaisController {
 
 	

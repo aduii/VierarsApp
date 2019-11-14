@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.opensource.vierarsapp.models.Distrito;
 import com.opensource.vierarsapp.models.Usuario;
@@ -21,7 +22,6 @@ import com.opensource.vierarsapp.services.UsuarioService;
 
 @Controller
 @RequestMapping("/views/usuario")
-
 public class UsuarioController {
 	@Autowired
 	UsuarioService _usuarioService;
@@ -55,56 +55,18 @@ public class UsuarioController {
 	
 	@PostMapping("/guardarReciclador")
 	public String guardar(@ModelAttribute Usuario reciclador) {
-		//Tipo (1. usuario)(2. Reciclador)
-		
-		reciclador.setPuntos(0);
-		reciclador.setTipo(2);
-		reciclador.setDistrito(_distritoService.finbyId(1));
 		_usuarioService.insert(reciclador);
 		return "redirect:/";
 	}
 	
-	@GetMapping("/escogerTipoUsuario")
-	public String escogerTipoUsuario() {
-		
+	@GetMapping(value = "/escogerTipoUsuario")
+	public String escogerTipoUsuario() {		
 		return "/views/usuario/escogerTipoUsuario";
 	}
-	
-	@GetMapping("/ingresar")
-	public String ingresar(Model model) {
-		
-		Usuario usuario = new Usuario();
-		
-		model.addAttribute("user", usuario);
-		return "/views/usuario/ingresar";
-	}
-	
+
 	@ModelAttribute("distritos")
 	public List<Distrito> getMultiCheckboxAllValues() {
 	    return _distritoService.listAll();
 	}
-
-	@PostMapping("/ingresarUsuario")
-	public String ingresarUsuario(@ModelAttribute Usuario user) {
-		
-		System.out.println(user.getEmail());
-		return "redirect:/";
-	}
 	
-	@GetMapping("/registrarUsuario")
-	public String registrarUsuario(Model model) {
-		Usuario usuario = new Usuario();
-		model.addAttribute("titulo", "Registrar Usuario");
-		model.addAttribute("usuario", usuario);
-		return "/views/usuario/registrarUsuario";
-	}
-	
-	@PostMapping("/guardarUsuario")
-	public String guardarUsuario(@ModelAttribute Usuario usuario) {
-		usuario.setPuntos(0);
-		usuario.setTipo(1);
-		usuario.setDistrito(_distritoService.finbyId(1));
-		_usuarioService.insert(usuario);
-		return "redirect:/";
-	}
 }
