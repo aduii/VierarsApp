@@ -1,6 +1,7 @@
 package com.opensource.vierarsapp.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import javax.transaction.Transactional;
 
@@ -19,29 +20,29 @@ public class DistritoService implements IDistritoService {
 	IDistritoRepository _distritoRepository;
 	
 	@Override
-	public boolean insert(Distrito t) {
-		return _distritoRepository.insert(t);
+	public void insert(Distrito t) {
+		_distritoRepository.save(t);
 	}
 
 	@Override
-	public boolean update(Distrito t) {
-		return _distritoRepository.update(t);
+	public void update(Distrito t) {
+		_distritoRepository.save(t);
 	}
 
 	@Override
-	public boolean delete(int id) {
-	
-		return _distritoRepository.delete(id);
+	public void delete(int id) {
+		_distritoRepository.deleteById(id);
 	}
 
 	@Override
 	public List<Distrito> listAll() {
-		return _distritoRepository.listAll();
+		return _distritoRepository.findAll();
 	}
 
 	@Override
-	public Distrito finbyId(int id) {
-		return _distritoRepository.finbyId(id);
+	public Optional<Distrito> finbyId(int id) {
+		return _distritoRepository.findById(id);
 	}
+
 
 }

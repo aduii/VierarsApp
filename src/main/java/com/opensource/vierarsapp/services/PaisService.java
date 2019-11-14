@@ -1,6 +1,8 @@
 package com.opensource.vierarsapp.services;
 
 import java.util.List;
+import java.util.Optional;
+
 import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,28 +18,29 @@ public class PaisService implements IPaisService{
 	private IPaisRepository _paisRepository;
 	
 	@Override
-	public boolean insert(Pais t) {
-		return _paisRepository.insert(t);
+	public void insert(Pais t) {
+		_paisRepository.save(t);
 	}
 
 	@Override
-	public boolean update(Pais t) {
-		return _paisRepository.update(t);
+	public void update(Pais t) {
+		_paisRepository.save(t);
 	}
 
 	@Override
-	public boolean delete(int id) {
-		return _paisRepository.delete(id);
+	public void delete(int id) {
+		_paisRepository.deleteById(id);
 	}
 
 	@Override
 	public List<Pais> listAll() {
-		return _paisRepository.listAll();
+		return _paisRepository.findAll();
 	}
 
 	@Override
-	public Pais finbyId(int id) {
-		return _paisRepository.finbyId(id);
+	public Optional<Pais> finbyId(int id) {
+		return _paisRepository.findById(id);
+
 	}
 	
 }

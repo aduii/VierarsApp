@@ -1,6 +1,7 @@
 package com.opensource.vierarsapp.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import javax.transaction.Transactional;
 
@@ -18,30 +19,28 @@ public class TipoService implements ITipoService{
 	private ITipoRepository _tipoRepository;
 
 	@Override
-	public boolean insert(Tipo t) {
-		return _tipoRepository.insert(t);
+	public void insert(Tipo t) {
+		_tipoRepository.save(t);
 	}
 
 	@Override
-	public boolean update(Tipo t) {
-		return _tipoRepository.update(t);
+	public void update(Tipo t) {
+		_tipoRepository.save(t);
 	}
 
 	@Override
-	public boolean delete(int id) {
-		return _tipoRepository.delete(id);
+	public void delete(int id) {
+		_tipoRepository.deleteById(id);
 	}
 
 	@Override
 	public List<Tipo> listAll() {
-		return _tipoRepository.listAll();
+		return _tipoRepository.findAll();
 	}
 
 	@Override
-	public Tipo finbyId(int id) {
-		return _tipoRepository.finbyId(id);
+	public Optional<Tipo> finbyId(int id) {
+		return _tipoRepository.findById(id);
 	}
 
-	
-	
 }

@@ -1,17 +1,18 @@
 package com.opensource.vierarsapp.services;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface ICrudService<T> {
 
-	public boolean insert(T t);
+	public void insert(T t);
 	
-	public boolean update(T t);
+	public void update(T t);
 	
-	public boolean delete(int id);
+	public void delete(int id);
 	
 	public List<T> listAll();
 	
-	public T finbyId(int id);
+	public Optional<T> finbyId(int id);
 	
 }

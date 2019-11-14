@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.opensource.vierarsapp.models.Distrito;
 import com.opensource.vierarsapp.models.Usuario;
@@ -21,7 +22,6 @@ import com.opensource.vierarsapp.services.UsuarioService;
 
 @Controller
 @RequestMapping("/views/usuario")
-
 public class UsuarioController {
 	@Autowired
 	UsuarioService _usuarioService;
@@ -55,20 +55,18 @@ public class UsuarioController {
 	
 	@PostMapping("/guardarReciclador")
 	public String guardar(@ModelAttribute Usuario reciclador) {
-		//Tipo (1. usuario)(2. Reciclador)
-		
-		reciclador.setPuntos(0);
-		reciclador.setTipo(2);
-		reciclador.setDistrito(_distritoService.finbyId(1));
 		_usuarioService.insert(reciclador);
 		return "redirect:/";
 	}
 	
-	@GetMapping("/escogerTipoUsuario")
-	public String escogerTipoUsuario() {
-		
+	@GetMapping(value = "/escogerTipoUsuario")
+	public String escogerTipoUsuario() {		
 		return "/views/usuario/escogerTipoUsuario";
 	}
 
+	@ModelAttribute("distritos")
+	public List<Distrito> getMultiCheckboxAllValues() {
+	    return _distritoService.listAll();
+	}
 	
 }

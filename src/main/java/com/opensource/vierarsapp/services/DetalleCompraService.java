@@ -1,6 +1,7 @@
 package com.opensource.vierarsapp.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import javax.transaction.Transactional;
 
@@ -18,27 +19,28 @@ public class DetalleCompraService implements IDetalleCompraService{
 	private IDetalleCompraRepository _detallecompraRepository;
 
 	@Override
-	public boolean insert(Detalle_Compra t) {
-		return _detallecompraRepository.insert(t);
+	public void insert(Detalle_Compra t) {
+		_detallecompraRepository.save(t);
 	}
 
 	@Override
-	public boolean update(Detalle_Compra t) {
-		return _detallecompraRepository.update(t);
+	public void update(Detalle_Compra t) {
+		_detallecompraRepository.save(t);
 	}
 
 	@Override
-	public boolean delete(int id) {
-		return _detallecompraRepository.delete(id);
+	public void delete(int id) {
+		_detallecompraRepository.deleteById(id);
 	}
 
 	@Override
 	public List<Detalle_Compra> listAll() {
-		return _detallecompraRepository.listAll();
+		return _detallecompraRepository.findAll();
 	}
 
 	@Override
-	public Detalle_Compra finbyId(int id) {
-		return _detallecompraRepository.finbyId(id);
+	public Optional<Detalle_Compra> finbyId(int id) {
+		return _detallecompraRepository.findById(id);
 	}
+
 }

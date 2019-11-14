@@ -1,6 +1,8 @@
 package com.opensource.vierarsapp.services;
 
 import java.util.List;
+import java.util.Optional;
+
 import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,27 +17,28 @@ public class MaterialRecicladoService implements IMaterialRecicladoService{
 	private IMaterialRecicladoRepository _materialrecicladoRepository;
 
 	@Override
-	public boolean insert(MateriaReciclado t) {
-		return _materialrecicladoRepository.insert(t);
+	public void insert(MateriaReciclado t) {
+		_materialrecicladoRepository.save(t);
 	}
 
 	@Override
-	public boolean update(MateriaReciclado t) {
-		return _materialrecicladoRepository.update(t);
+	public void update(MateriaReciclado t) {
+		_materialrecicladoRepository.save(t);
 	}
 
 	@Override
-	public boolean delete(int id) {
-		return _materialrecicladoRepository.delete(id);
+	public void delete(int id) {
+		_materialrecicladoRepository.deleteById(id);
 	}
 
 	@Override
 	public List<MateriaReciclado> listAll() {
-		return _materialrecicladoRepository.listAll();
+		return _materialrecicladoRepository.findAll();
 	}
 
 	@Override
-	public MateriaReciclado finbyId(int id) {
-		return _materialrecicladoRepository.finbyId(id);
+	public Optional<MateriaReciclado> finbyId(int id) {
+		return _materialrecicladoRepository.findById(id);
 	}
+
 }

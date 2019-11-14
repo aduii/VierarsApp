@@ -9,15 +9,14 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.opensource.vierarsapp.models.Ciudad;
 import com.opensource.vierarsapp.models.Distrito;
 import com.opensource.vierarsapp.services.DistritoService;
 
-
-
-@Controller
-@RequestMapping("distrito")
+@RestController
+@RequestMapping("/distrito")
 public class DistritoController {
 	@Autowired
 	DistritoService _distritoService;
