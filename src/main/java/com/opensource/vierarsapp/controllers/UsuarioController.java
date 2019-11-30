@@ -70,7 +70,7 @@ public class UsuarioController {
 	}
 
 	//Registrar
-	@RequestMapping(value = "/{distritoID}/{dsdsds}/insertar", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(value = "/{distritoID}/insertar", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
 	public Usuario crearUsuario(@PathVariable(value="distritoID") int distritoID, @RequestBody Usuario t) {
 	  return _usuarioService.insert(t, distritoID);
 	}
