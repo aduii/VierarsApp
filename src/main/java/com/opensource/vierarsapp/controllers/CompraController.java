@@ -28,4 +28,8 @@ public class CompraController {
 		}
 		return new ResponseEntity<List<Compra>>(compras, HttpStatus.OK);
 	}
+
+	
+
+
 }

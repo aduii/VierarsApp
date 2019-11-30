@@ -1,6 +1,7 @@
 package com.opensource.vierarsapp.models;
 
 import java.io.Serializable;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -23,12 +24,6 @@ public class Pais implements Serializable {
 	@Column(name = "nombre")
 	private String nombre;
 
-	
-	public Pais(int idPais, String nombre) {
-		super();
-		this.idPais = idPais;
-		this.nombre = nombre;
-	}
 
 	public Pais() {
 		super();
@@ -48,6 +43,12 @@ public class Pais implements Serializable {
 	}
 
 	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+
+	public Pais(int idPais, String nombre ) {
+		this.idPais = idPais;
 		this.nombre = nombre;
 	}
 	
