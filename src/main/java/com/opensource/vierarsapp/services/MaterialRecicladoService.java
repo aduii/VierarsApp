@@ -7,11 +7,9 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.opensource.vierarsapp.dao.IDistritoRepository;
 import com.opensource.vierarsapp.dao.IMaterialRecicladoRepository;
 import com.opensource.vierarsapp.dao.ITipoRepository;
 import com.opensource.vierarsapp.dao.IUsuarioRepository;
-import com.opensource.vierarsapp.models.Distrito;
 import com.opensource.vierarsapp.models.MateriaReciclado;
 import com.opensource.vierarsapp.models.Tipo;
 import com.opensource.vierarsapp.models.Usuario;
@@ -29,19 +27,19 @@ public class MaterialRecicladoService implements IMaterialRecicladoService{
 	@Autowired
 	private ITipoRepository _tipoRepository;
 	@Override
-	public boolean insert(MateriaReciclado t) {
+	public boolean insert(final MateriaReciclado t) {
 		try {
 			_materialrecicladoRepository.save(t);
 			return true;
-		} catch (Exception e) {
+		} catch (final Exception e) {
 			return false;
 		}
 	}
-	
-public MateriaReciclado insert( MateriaReciclado t, int idUsuario,int idTipo){
-		
-		Usuario usuario = _usuarioRepository.findById(idUsuario).get();
-		Tipo tipo = _tipoRepository.findById(idTipo).get();
+
+	public MateriaReciclado insert(final MateriaReciclado t, final int idUsuario, final int idTipo) {
+
+		final Usuario usuario = _usuarioRepository.findById(idUsuario).get();
+		final Tipo tipo = _tipoRepository.findById(idTipo).get();
 		t.setUsuario(usuario);
 		t.setTipo(tipo);
 		_materialrecicladoRepository.save(t);
@@ -49,12 +47,12 @@ public MateriaReciclado insert( MateriaReciclado t, int idUsuario,int idTipo){
 	}
 
 	@Override
-	public void update(MateriaReciclado t) {
+	public void update(final MateriaReciclado t) {
 		_materialrecicladoRepository.save(t);
 	}
 
 	@Override
-	public void delete(int id) {
+	public void delete(final int id) {
 		_materialrecicladoRepository.deleteById(id);
 	}
 
@@ -64,7 +62,7 @@ public MateriaReciclado insert( MateriaReciclado t, int idUsuario,int idTipo){
 	}
 
 	@Override
-	public Optional<MateriaReciclado> finbyId(int id) {
+	public Optional<MateriaReciclado> finbyId(final int id) {
 		return _materialrecicladoRepository.findById(id);
 	}
 

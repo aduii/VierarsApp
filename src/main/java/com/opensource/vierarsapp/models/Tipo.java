@@ -35,7 +35,6 @@ public class Tipo implements Serializable {
 	
 	public Tipo() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public int getIdTipo() {

@@ -68,7 +68,6 @@ public class Usuario implements Serializable {
 
 	public Usuario() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public int getIdUsuario() {

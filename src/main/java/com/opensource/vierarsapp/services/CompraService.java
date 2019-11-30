@@ -11,8 +11,6 @@ import org.springframework.stereotype.Service;
 import com.opensource.vierarsapp.dao.ICompraRepository;
 import com.opensource.vierarsapp.dao.IUsuarioRepository;
 import com.opensource.vierarsapp.models.Compra;
-import com.opensource.vierarsapp.models.MateriaReciclado;
-import com.opensource.vierarsapp.models.Tipo;
 import com.opensource.vierarsapp.models.Usuario;
 
 @Service("compraService")
