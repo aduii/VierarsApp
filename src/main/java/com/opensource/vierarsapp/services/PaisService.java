@@ -18,8 +18,13 @@ public class PaisService implements IPaisService{
 	private IPaisRepository _paisRepository;
 	
 	@Override
-	public void insert(Pais t) {
-		_paisRepository.save(t);
+	public boolean insert(Pais t) {
+		try {
+			_paisRepository.save(t);
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
 	}
 
 	@Override

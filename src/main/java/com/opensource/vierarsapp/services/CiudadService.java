@@ -3,8 +3,6 @@ package com.opensource.vierarsapp.services;
 import java.util.List;
 import java.util.Optional;
 
-import javax.transaction.Transactional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Service;
@@ -20,8 +18,13 @@ public class CiudadService implements ICiudadService {
 	private ICiudadRepository _ciudadRepository;
 	
 	@Override
-	public void insert(Ciudad t) {
-		_ciudadRepository.save(t);
+	public boolean insert(Ciudad t) {
+		try {
+			_ciudadRepository.save(t);
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
 	}
 
 	@Override

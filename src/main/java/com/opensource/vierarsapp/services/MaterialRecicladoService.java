@@ -17,8 +17,13 @@ public class MaterialRecicladoService implements IMaterialRecicladoService{
 	private IMaterialRecicladoRepository _materialrecicladoRepository;
 
 	@Override
-	public void insert(MateriaReciclado t) {
-		_materialrecicladoRepository.save(t);
+	public boolean insert(MateriaReciclado t) {
+		try {
+			_materialrecicladoRepository.save(t);
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
 	}
 
 	@Override

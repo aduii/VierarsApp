@@ -19,8 +19,13 @@ public class TipoService implements ITipoService{
 	private ITipoRepository _tipoRepository;
 
 	@Override
-	public void insert(Tipo t) {
-		_tipoRepository.save(t);
+	public boolean insert(Tipo t) {
+		try {
+			_tipoRepository.save(t);
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
 	}
 
 	@Override

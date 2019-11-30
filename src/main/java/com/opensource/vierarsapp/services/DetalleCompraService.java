@@ -19,8 +19,13 @@ public class DetalleCompraService implements IDetalleCompraService{
 	private IDetalleCompraRepository _detallecompraRepository;
 
 	@Override
-	public void insert(Detalle_Compra t) {
-		_detallecompraRepository.save(t);
+	public boolean insert(Detalle_Compra t) {
+		try {
+			_detallecompraRepository.save(t);
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
 	}
 
 	@Override

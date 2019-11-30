@@ -20,8 +20,13 @@ public class DistritoService implements IDistritoService {
 	IDistritoRepository _distritoRepository;
 	
 	@Override
-	public void insert(Distrito t) {
-		_distritoRepository.save(t);
+	public boolean insert(Distrito t) {
+		try {
+			_distritoRepository.save(t);
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
 	}
 
 	@Override

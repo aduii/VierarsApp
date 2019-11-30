@@ -8,7 +8,9 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.opensource.vierarsapp.dao.IDistritoRepository;
 import com.opensource.vierarsapp.dao.IUsuarioRepository;
+import com.opensource.vierarsapp.models.Distrito;
 import com.opensource.vierarsapp.models.Usuario;
 
 @Service("usuarioService")
@@ -17,10 +19,26 @@ public class UsuarioService implements IUsuarioService{
 
 	@Autowired
 	private IUsuarioRepository _usuarioRepository;
+
+	@Autowired
+	private IDistritoRepository _distritoRepository;
 	
 	@Override
-	public void insert(Usuario t) {
+	public boolean insert(Usuario t) {
+		try {
+			_usuarioRepository.save(t);
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
+	}
+
+	public Usuario insert(Usuario t, int idDistrito){
+		
+		Distrito distrito = _distritoRepository.findById(idDistrito).get();
+		t.setDistrito(distrito);
 		_usuarioRepository.save(t);
+		return t;
 	}
 
 	@Override

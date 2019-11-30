@@ -5,7 +5,7 @@ import java.util.Optional;
 
 public interface ICrudService<T> {
 
-	public void insert(T t);
+	public boolean insert(T t);
 	
 	public void update(T t);
 	

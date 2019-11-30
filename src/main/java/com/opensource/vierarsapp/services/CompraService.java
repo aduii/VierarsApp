@@ -19,8 +19,13 @@ public class CompraService implements ICompraService{
 	private ICompraRepository _compraRepository;
 
 	@Override
-	public void insert(Compra t) {
-		_compraRepository.save(t);
+	public boolean insert(Compra t) {
+		try {
+			_compraRepository.save(t);
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
 	}
 
 	@Override
