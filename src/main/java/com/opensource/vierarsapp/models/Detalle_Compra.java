@@ -46,7 +46,6 @@ public class Detalle_Compra implements Serializable {
 	
 	public Detalle_Compra() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 	
 	public int getIdDetalleCompra() {

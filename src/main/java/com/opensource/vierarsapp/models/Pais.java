@@ -32,7 +32,6 @@ public class Pais implements Serializable {
 
 	public Pais() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public int getIdPais() {

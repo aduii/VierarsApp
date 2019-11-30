@@ -5,7 +5,6 @@ import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -14,7 +13,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import org.hibernate.annotations.CascadeType;
 
 @Entity
 @Table(name = "MateriaReciclado")
@@ -70,7 +68,6 @@ public class MateriaReciclado implements Serializable {
 
 	public MateriaReciclado() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public int getIdMaterialRreciclado() {

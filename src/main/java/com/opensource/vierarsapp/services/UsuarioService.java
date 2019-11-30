@@ -32,7 +32,6 @@ public class UsuarioService implements IUsuarioService{
 			return false;
 		}
 	}
-
 	public Usuario insert(Usuario t, int idDistrito){
 		
 		Distrito distrito = _distritoRepository.findById(idDistrito).get();

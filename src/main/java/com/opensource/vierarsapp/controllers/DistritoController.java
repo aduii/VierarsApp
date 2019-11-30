@@ -2,16 +2,12 @@ package com.opensource.vierarsapp.controllers;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.opensource.vierarsapp.models.Ciudad;
 import com.opensource.vierarsapp.models.Distrito;
 import com.opensource.vierarsapp.services.DistritoService;
 

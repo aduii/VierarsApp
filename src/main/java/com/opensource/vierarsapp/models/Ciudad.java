@@ -40,7 +40,6 @@ private static final long serialVersionUID = 1L;
 
 	public Ciudad() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public int getIdCiudad() {
