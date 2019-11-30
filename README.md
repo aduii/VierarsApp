@@ -132,16 +132,44 @@ ALTER TABLE Usuario ADD CONSTRAINT Usuario_Distrito FOREIGN KEY Usuario_Distrito
 
 ````sql
 
-INSERT INTO Pais(nombre) VALUES('Perú');
-INSERT INTO Ciudad(nombre, idPais) VALUES('Lima',1);
-INSERT INTO Distrito(nombre, idCiudad) VALUES('El agustino', 1);
-INSERT INTO Distrito(nombre, idCiudad) VALUES('San isidro', 1);
-INSERT INTO Usuario(nombre, apellidos, nickname, email, password, idDistrito, direccion, puntos, tipo) VALUES('Andy','Eulogio Sulluchuco', 'andygeek', 'andy.eulogio@gmail.com', '12345678', 1, 'Jr. Lima', 5, 1);
-INSERT INTO Compra(idUsuario,idReciclador,fecha, tipo_de_pago, monto_total) VALUES(1,1,'2019-1-13','Efectivo',12.5);
-INSERT INTO Tipo(nombre,tarifa_kilo) VALUES('Carton', 0.5);
-INSERT INTO MateriaReciclado(idUsuario,nombre,descripcion,foto,precio,peso,idTipo) VALUES(1,'Carton','Material reciclable','foto',15.5,25.3,1);
+INSERT INTO pais(nombre) VALUES('Perú');
+INSERT INTO ciudad(nombre, id_pais) VALUES('Lima',1);
+INSERT INTO distrito(nombre, id_ciudad) VALUES('El agustino', 1);
+INSERT INTO distrito(nombre, id_ciudad) VALUES('San isidro', 1);
+INSERT INTO usuario(nombre, apellidos, nickname, email, password, id_distrito, direccion, puntos, tipo) VALUES('Andy','Eulogio Sulluchuco', 'andygeek', 'andy.eulogio@gmail.com', '12345678', 1, 'Jr. Lima', 5, 1);
+INSERT INTO compra(id_usuario,id_reciclador,fecha, tipo_de_pago, monto_total) VALUES(1,1,'2019-1-13','Efectivo',12.5);
+INSERT INTO tipo(nombre,tarifa_kilo) VALUES('Carton', 0.5);
+INSERT INTO materia_reciclado(id_usuario,nombre,descripcion,foto,precio,peso,id_tipo) VALUES(1,'Carton','Material reciclable','foto',15.5,25.3,1);
+
 
 ````
+### Para PostMan
+
+localhost:8080/materialreciclado/1/1/insertar
+
+````json
+
+{
+    "nombre": "Plastico",
+    "descripcion": "Material reciclable",
+    "foto": "foto",
+    "precio": 15.5,
+    "peso": 25.3
+}
+
+````
+localhost:8080/compra/1/1/insertar
+
+````json
+
+{
+    "fecha": "2020-01-13T00:00:00.000+0000",
+    "tipo_de_pago": "Efectivo",
+    "monto_total": 12.5
+}
+
+````
+
 
 También tienen que cambiar las direcciones de su base de datos en la clase **DataBaseConfiguration.java** dentro del package **com.opensource.vierarsapp.configurations**
 
