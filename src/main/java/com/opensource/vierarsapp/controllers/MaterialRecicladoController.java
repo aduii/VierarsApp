@@ -30,6 +30,7 @@ public class MaterialRecicladoController {
 	public ResponseEntity<List<MateriaReciclado>> getStudent(){
 		List<MateriaReciclado> materialesreciclados = new ArrayList<>();
 		materialesreciclados = _materialrecicladoService.listAll();
+		
 		if(materialesreciclados.isEmpty()) {
 			return new ResponseEntity<List<MateriaReciclado>>(HttpStatus.NO_CONTENT);
 		}
@@ -86,4 +87,18 @@ public class MaterialRecicladoController {
 		}
 		return new ResponseEntity<List<MateriaReciclado>>(materialesreciclados, HttpStatus.OK);
 	}
+
+
+	//Materiales por Id de usuario que lo registro
+	@GetMapping("/{idUsuario}/listar")
+	public ResponseEntity<List<MateriaReciclado>> getMaterialesUsuario(@PathVariable(value="idUsuario") int id) {
+		List<MateriaReciclado> materialesreciclados = new ArrayList<>();
+		materialesreciclados = _materialrecicladoService.listarMaterialUsuario(id);
+		if(materialesreciclados.isEmpty()) {
+			return new ResponseEntity<List<MateriaReciclado>>(HttpStatus.NO_CONTENT);
+		}
+		return new ResponseEntity<List<MateriaReciclado>>(materialesreciclados, HttpStatus.OK);
+	}
+
+
 }
