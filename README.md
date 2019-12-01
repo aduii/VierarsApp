@@ -137,9 +137,10 @@ INSERT INTO ciudad(nombre, id_pais) VALUES('Lima',1);
 INSERT INTO distrito(nombre, id_ciudad) VALUES('El agustino', 1);
 INSERT INTO distrito(nombre, id_ciudad) VALUES('San isidro', 1);
 INSERT INTO usuario(nombre, apellidos, nickname, email, password, id_distrito, direccion, puntos, tipo) VALUES('Andy','Eulogio Sulluchuco', 'andygeek', 'andy.eulogio@gmail.com', '12345678', 1, 'Jr. Lima', 5, 1);
-INSERT INTO compra(id_usuario,id_reciclador,fecha, tipo_de_pago, monto_total) VALUES(1,1,'2019-1-13','Efectivo',12.5);
 INSERT INTO tipo(nombre,tarifa_kilo) VALUES('Carton', 0.5);
-INSERT INTO materia_reciclado(id_usuario,nombre,descripcion,foto,precio,peso,id_tipo) VALUES(1,'Carton','Material reciclable','foto',15.5,25.3,1);
+INSERT INTO materia_reciclado(id_usuario,nombre,descripcion,foto,precio,peso,id_tipo,esta_vendido) VALUES(1,'Carton','Material reciclable','foto',15.5,25.3,1,0);
+INSERT INTO compra(id_usuario,id_reciclador, id_material_reciclado, fecha, tipo_de_pago, monto_total ) VALUES(1,1,1,'2019-1-13','Efectivo',12.5);
+INSERT INTO tipo(nombre,tarifa_kilo) VALUES('Carton', 0.5);
 
 
 ````
