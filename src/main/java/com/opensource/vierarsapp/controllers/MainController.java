@@ -4,7 +4,6 @@ import com.opensource.vierarsapp.models.Userlogin;
 import com.opensource.vierarsapp.models.Usuario;
 import com.opensource.vierarsapp.services.IUsuarioService;
 
-import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;

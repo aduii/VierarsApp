@@ -9,8 +9,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.opensource.vierarsapp.dao.ICompraRepository;
+import com.opensource.vierarsapp.dao.IMaterialRecicladoRepository;
 import com.opensource.vierarsapp.dao.IUsuarioRepository;
 import com.opensource.vierarsapp.models.Compra;
+import com.opensource.vierarsapp.models.MateriaReciclado;
 import com.opensource.vierarsapp.models.Usuario;
 
 @Service("compraService")
@@ -23,6 +25,9 @@ public class CompraService implements ICompraService{
 	@Autowired
 	private IUsuarioRepository _usuarioRepository;
 
+	@Autowired
+	private IMaterialRecicladoRepository _materialrecicladoRepository;
+
 	@Override
 	public boolean insert(Compra t) {
 		try {
@@ -33,13 +38,14 @@ public class CompraService implements ICompraService{
 		}
 	}
 	
-public Compra insert(  Compra t, int idReciclador,int idUsuario){
+public Compra insert(  Compra t, int idReciclador,int idUsuario, int idMaterial){
 		
-	   Usuario usuario = _usuarioRepository.findById(idUsuario).get();
+	    Usuario usuario = _usuarioRepository.findById(idUsuario).get();
 		Usuario reciclador = _usuarioRepository.findById(idReciclador).get();
+		MateriaReciclado materialReciclado = _materialrecicladoRepository.findById(idMaterial).get();
 		t.setReciclador(reciclador);
 		t.setUsuario(usuario);
-		
+		t.setMaterialReciclado(materialReciclado);
 		_compraRepository.save(t);
 		return t;
 	}
