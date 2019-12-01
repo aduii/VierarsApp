@@ -2,10 +2,20 @@ package com.opensource.vierarsapp.services;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.ServiceLoader.Provider;
 
+import javax.persistence.EntityManager;
+import javax.persistence.TypedQuery;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Predicate;
+import javax.persistence.criteria.Root;
 import javax.transaction.Transactional;
+import javax.websocket.Session;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Service;
 
 import com.opensource.vierarsapp.dao.IDistritoRepository;
@@ -13,9 +23,11 @@ import com.opensource.vierarsapp.dao.IUsuarioRepository;
 import com.opensource.vierarsapp.models.Distrito;
 import com.opensource.vierarsapp.models.Usuario;
 
+
 @Service("usuarioService")
 @Transactional
 public class UsuarioService implements IUsuarioService{
+	
 
 	@Autowired
 	private IUsuarioRepository _usuarioRepository;
@@ -61,5 +73,14 @@ public class UsuarioService implements IUsuarioService{
 		return _usuarioRepository.findById(id);
 	}
 
+	@Override
+	public Usuario buscarPorEmail(String email, String password){
+		return _usuarioRepository.buscarPorEmail(email, password);
+	}
+
 
 }
+
+
+
+
