@@ -66,4 +66,9 @@ public class MaterialRecicladoService implements IMaterialRecicladoService{
 		return _materialrecicladoRepository.findById(id);
 	}
 
+	@Override
+	public List<MateriaReciclado> listarMaterialSinVender() {
+		return _materialrecicladoRepository.listarMaterialSinVender();
+	}
+
 }

@@ -50,7 +50,7 @@ public class Usuario implements Serializable {
 	
 	@Column(name = "tipo")
 	private int tipo;
-
+	//Usuario 0 y Reciclador 1
 	
 	public Usuario(int idUsuario, String nombre, String apellidos, String nickname, String email, String password,Distrito distrito, String direccion,int puntos,int tipo) {
 		super();

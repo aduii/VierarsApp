@@ -75,4 +75,15 @@ public class MaterialRecicladoController {
 	Optional<MateriaReciclado> materialreciclado = _materialrecicladoService.finbyId(id);
 	return materialreciclado.get();
 	}
+
+
+	@GetMapping("/sinvender")
+	public ResponseEntity<List<MateriaReciclado>> getSinVender(){
+		List<MateriaReciclado> materialesreciclados = new ArrayList<>();
+		materialesreciclados = _materialrecicladoService.listarMaterialSinVender();
+		if(materialesreciclados.isEmpty()) {
+			return new ResponseEntity<List<MateriaReciclado>>(HttpStatus.NO_CONTENT);
+		}
+		return new ResponseEntity<List<MateriaReciclado>>(materialesreciclados, HttpStatus.OK);
+	}
 }
