@@ -73,4 +73,17 @@ public class CompraController {
 	Optional<Compra> compra = _compraService.finbyId(id);
 	return compra.get();
 	}
+
+	//Compras por Id de usuario que lo registro
+	@GetMapping("/{idUsuario}/listar")
+	public ResponseEntity<List<Compra>> getMaterialesUsuario(@PathVariable(value="idUsuario") int id) {
+		List<Compra> compras = new ArrayList<>();
+		compras = _compraService.listarCompraUsuario(id);
+		if(compras.isEmpty()) {
+			return new ResponseEntity<List<Compra>>(HttpStatus.NO_CONTENT);
+		}
+		return new ResponseEntity<List<Compra>>(compras, HttpStatus.OK);
+	}
+
+
 }

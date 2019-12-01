@@ -29,20 +29,20 @@ public class CompraService implements ICompraService{
 	private IMaterialRecicladoRepository _materialrecicladoRepository;
 
 	@Override
-	public boolean insert(Compra t) {
+	public boolean insert(final Compra t) {
 		try {
 			_compraRepository.save(t);
 			return true;
-		} catch (Exception e) {
+		} catch (final Exception e) {
 			return false;
 		}
 	}
-	
-public Compra insert(  Compra t, int idReciclador,int idUsuario, int idMaterial){
-		
-	    Usuario usuario = _usuarioRepository.findById(idUsuario).get();
-		Usuario reciclador = _usuarioRepository.findById(idReciclador).get();
-		MateriaReciclado materialReciclado = _materialrecicladoRepository.findById(idMaterial).get();
+
+	public Compra insert(final Compra t, final int idReciclador, final int idUsuario, final int idMaterial) {
+
+		final Usuario usuario = _usuarioRepository.findById(idUsuario).get();
+		final Usuario reciclador = _usuarioRepository.findById(idReciclador).get();
+		final MateriaReciclado materialReciclado = _materialrecicladoRepository.findById(idMaterial).get();
 		t.setReciclador(reciclador);
 		t.setUsuario(usuario);
 		t.setMaterialReciclado(materialReciclado);
@@ -51,12 +51,12 @@ public Compra insert(  Compra t, int idReciclador,int idUsuario, int idMaterial)
 	}
 
 	@Override
-	public void update(Compra t) {
+	public void update(final Compra t) {
 		_compraRepository.save(t);
 	}
 
 	@Override
-	public void delete(int id) {
+	public void delete(final int id) {
 		_compraRepository.deleteById(id);
 	}
 
@@ -66,8 +66,13 @@ public Compra insert(  Compra t, int idReciclador,int idUsuario, int idMaterial)
 	}
 
 	@Override
-	public Optional<Compra> finbyId(int id) {
+	public Optional<Compra> finbyId(final int id) {
 		return _compraRepository.findById(id);
+	}
+
+	@Override
+	public List<Compra> listarCompraUsuario(int id) {
+		return _compraRepository.listarCompraUsuarioDAO(id);
 	}
 
 
