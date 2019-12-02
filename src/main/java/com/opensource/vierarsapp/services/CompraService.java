@@ -38,13 +38,10 @@ public class CompraService implements ICompraService{
 		}
 	}
 
-	public Compra insert(final Compra t, final int idReciclador, final int idUsuario, final int idMaterial) {
-
-		final Usuario usuario = _usuarioRepository.findById(idUsuario).get();
+	public Compra insert(final Compra t, final int idReciclador, final int idMaterial) {
 		final Usuario reciclador = _usuarioRepository.findById(idReciclador).get();
 		final MateriaReciclado materialReciclado = _materialrecicladoRepository.findById(idMaterial).get();
 		t.setReciclador(reciclador);
-		t.setUsuario(usuario);
 		t.setMaterialReciclado(materialReciclado);
 		_compraRepository.save(t);
 		return t;

@@ -33,9 +33,6 @@ public class Compra implements Serializable{
 	private double monto_total;
 	
 	//---------------------------------------------
-	@ManyToOne
-	@JoinColumn(name = "idUsuario")
-	private Usuario usuario;
 	
 	@ManyToOne
 	@JoinColumn(name = "idReciclador")
@@ -46,14 +43,13 @@ public class Compra implements Serializable{
 	private MateriaReciclado materialReciclado;
 	//---------------------------------------------
 	
-	public Compra(int idCompra, Date fecha, String tipo_de_pago, double monto_total, Usuario usuario,Usuario reciclador, MateriaReciclado materialReciclado) {
+	public Compra(int idCompra, Date fecha, String tipo_de_pago, double monto_total, Usuario reciclador, MateriaReciclado materialReciclado) {
 		super();
 		this.idCompra = idCompra;
 		this.fecha = fecha;
 		this.tipo_de_pago = tipo_de_pago;
 		this.monto_total = monto_total;
-		this.usuario = usuario;
-		this.reciclador = reciclador; //CAMBIE ESTO DE idReciclador
+		this.reciclador = reciclador; 
 		this.materialReciclado = materialReciclado;
 	}
 
@@ -91,14 +87,6 @@ public class Compra implements Serializable{
 
 	public void setMonto_total(double monto_total) {
 		this.monto_total = monto_total;
-	}
-
-	public Usuario getUsuario() {
-		return usuario;
-	}
-
-	public void setUsuario(Usuario usuario) {
-		this.usuario = usuario;
 	}
 
 	public Usuario getReciclador() {

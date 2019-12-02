@@ -62,9 +62,9 @@ public class CompraController {
 	}
 
 	//Registrar
-	@RequestMapping(value = "/{recicladorID}/{usuarioID}/{materialID}/insertar", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
-	public Compra crearCompra(@PathVariable(value="recicladorID") int recicladorID, @PathVariable(value="usuarioID") int usuarioID, @PathVariable(value="materialID") int materialID,@RequestBody Compra t) {
-	  return _compraService.insert(t,recicladorID ,usuarioID, materialID);
+	@RequestMapping(value = "/{recicladorID}/{materialID}/insertar", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
+	public Compra crearCompra(@PathVariable(value="recicladorID") int recicladorID, @PathVariable(value="materialID") int materialID,@RequestBody Compra t) {
+	  return _compraService.insert(t,recicladorID , materialID);
 	}
 
 
